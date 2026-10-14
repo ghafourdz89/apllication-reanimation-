@@ -36,3 +36,10 @@ npm test
 - `src/rcp.js` : logique pure (minuteries, seuils, doses).
 - `src/rcp.test.mjs` : tests de la logique.
 - `assets/bip.wav` : son du métronome.
+
+## Obtenir un APK Android (sans ordinateur de développement)
+
+1. Créez un compte gratuit sur https://expo.dev.
+2. Sur expo.dev : **Create a project**, puis dans **Project settings → GitHub**, reliez le dépôt `apllication-reanimation-`.
+3. Dans l'onglet **Builds**, lancez un build **Android** avec le profil **preview**.
+4. À la fin du build (environ 10-20 min), téléchargez l'APK depuis le lien ou le QR code et installez-le sur le téléphone (autorisez les « sources inconnues »).

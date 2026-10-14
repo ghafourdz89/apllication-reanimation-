@@ -7,7 +7,8 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ghafourdz89.assistantrcp"
     },
     "android": {
       "adaptiveIcon": {
@@ -15,7 +16,8 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "com.ghafourdz89.assistantrcp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
