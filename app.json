@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Assistant RCP",
+    "name": "Planning Médecins",
     "slug": "assistant-rcp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,8 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "name": "Assistant RCP",
-      "shortName": "RCP",
+      "name": "Planning Médecins",
+      "shortName": "Planning",
       "themeColor": "#101418",
       "backgroundColor": "#101418"
     },
