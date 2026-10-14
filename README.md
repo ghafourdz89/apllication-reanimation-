@@ -15,7 +15,14 @@ Application mobile (Android / iOS, React Native + Expo) d'aide à la réanimatio
 - **Journal horodaté** (temps depuis le début + heure réelle).
 - L'écran reste allumé pendant l'utilisation.
 
-## Lancer l'application
+## Utiliser l'application dans le navigateur (iPhone et Android)
+
+Adresse : https://ghafourdz89.github.io/apllication-reanimation-/
+
+Ouvrez-la dans Safari (iPhone) ou Chrome (Android), puis **Partager → Sur l'écran d'accueil** (iPhone) ou **⋮ → Ajouter à l'écran d'accueil** (Android) pour l'avoir comme une application.
+Elle est republiée automatiquement à chaque modification de la branche `main` (`.github/workflows/web.yml`).
+
+## Lancer l'application en développement
 
 ```bash
 npm install
