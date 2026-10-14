@@ -20,8 +20,15 @@
       "package": "com.ghafourdz89.assistantrcp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Assistant RCP",
+      "shortName": "RCP",
+      "themeColor": "#101418",
+      "backgroundColor": "#101418"
     },
-    "backgroundColor": "#101418"
+    "backgroundColor": "#101418",
+    "experiments": {
+      "baseUrl": "/apllication-reanimation-"
+    }
   }
 }

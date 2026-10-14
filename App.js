@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Alert, Pressable, ScrollView, StyleSheet, Text, Vibration, View } from 'react-native';
+import { Alert, Platform, Pressable, ScrollView, StyleSheet, Text, Vibration, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { setAudioModeAsync, useAudioPlayer } from 'expo-audio';
@@ -15,6 +15,18 @@ import {
   formatDuration,
   nextAmiodarone,
 } from './src/rcp';
+
+// Alert.alert n'affiche rien sur le web : on utilise window.confirm à la place.
+function confirmAction(title, message, confirmText, onConfirm) {
+  if (Platform.OS === 'web') {
+    if (window.confirm(`${title}\n\n${message}`)) onConfirm();
+    return;
+  }
+  Alert.alert(title, message, [
+    { text: 'Annuler', style: 'cancel' },
+    { text: confirmText, style: 'destructive', onPress: onConfirm },
+  ]);
+}
 
 const COLORS = {
   bg: '#101418',
@@ -112,34 +124,20 @@ function AssistantRCP() {
   };
 
   const finish = (label) => {
-    Alert.alert(label, 'Confirmer la fin de la réanimation ?', [
-      { text: 'Annuler', style: 'cancel' },
-      {
-        text: 'Confirmer',
-        style: 'destructive',
-        onPress: () => {
-          const at = Date.now();
-          addEvent(label, at);
-          setEndedAt(at);
-        },
-      },
-    ]);
+    confirmAction(label, 'Confirmer la fin de la réanimation ?', 'Confirmer', () => {
+      const at = Date.now();
+      addEvent(label, at);
+      setEndedAt(at);
+    });
   };
 
   const reset = () => {
-    Alert.alert('Nouvelle réanimation', 'Effacer le journal actuel ?', [
-      { text: 'Annuler', style: 'cancel' },
-      {
-        text: 'Effacer',
-        style: 'destructive',
-        onPress: () => {
-          setStartedAt(null);
-          setEndedAt(null);
-          setCycleStart(null);
-          setLog([]);
-        },
-      },
-    ]);
+    confirmAction('Nouvelle réanimation', 'Effacer le journal actuel ?', 'Effacer', () => {
+      setStartedAt(null);
+      setEndedAt(null);
+      setCycleStart(null);
+      setLog([]);
+    });
   };
 
   if (startedAt == null) {
