@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { formatDuration } from './rcp.js';
+import { formatDuration } from './temps.js';
 
 test('formatDuration affiche mm:ss', () => {
   assert.equal(formatDuration(0), '00:00');

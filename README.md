@@ -1,10 +1,22 @@
-# Assistant RCP
+# Planning Médecins
 
-Application mobile (Android / iOS, React Native + Expo) d'aide à la réanimation cardio-pulmonaire.
+Application mobile (Android / iOS / navigateur, React Native + Expo) pour les médecins, avec deux onglets :
+
+- **📅 Planning** : tableau des gardes et astreintes du service.
+- **❤️ RCP** : assistant de réanimation cardio-pulmonaire guidé.
 
 > ⚠️ Outil d'aide uniquement. Ne remplace ni la formation ni les protocoles en vigueur.
 
-## Fonctionnalités
+## Planning des gardes
+
+- Liste des médecins du service (ajout, suppression, couleur par médecin).
+- Pour chaque jour du mois : **garde jour ☀️**, **garde nuit 🌙**, **astreinte 📟** — toucher une case pour choisir le médecin ou libérer.
+- « De garde aujourd'hui » en haut de l'écran.
+- Nombre de gardes par médecin sur le mois (équité).
+- Navigation de mois en mois.
+- Pour l'instant, le planning est enregistré **sur l'appareil** (pas encore partagé entre médecins).
+
+## Assistant RCP
 
 L'application guide pas à pas selon l'algorithme de réanimation avancée de l'adulte (ERC) :
 
@@ -42,10 +54,13 @@ npm test
 
 ## Structure
 
-- `App.js` : écran principal (interface).
-- `src/algorithme.js` : algorithme ERC (étapes, chocs, adrénaline, amiodarone).
-- `src/rcp.js` : constantes et formatage des durées.
-- `src/*.test.mjs` : tests (`npm test`).
+- `App.js` : écran principal et barre d'onglets.
+- `src/ui.js` : couleurs et boutons communs.
+- `src/planning/` : planning des gardes (`logique.js`, `stockage.js`, `EcranPlanning.js`).
+- `src/rcp/EcranRCP.js` : écran de l'assistant RCP.
+- `src/rcp/algorithme.js` : algorithme ERC (étapes, chocs, adrénaline, amiodarone).
+- `src/rcp/temps.js` : constantes et formatage des durées.
+- `src/**/*.test.mjs` : tests (`npm test`).
 - `assets/bip.wav` : son du métronome.
 
 ## Obtenir un APK Android (sans ordinateur de développement)

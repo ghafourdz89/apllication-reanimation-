@@ -1,7 +1,7 @@
 // Algorithme de réanimation avancée de l'adulte (recommandations ERC).
 // Logique pure (sans React) : un réducteur d'état + des fonctions de consignes.
 
-import { ADRENALINE_DUE_MS, ADRENALINE_LATE_MS, CYCLE_MS, formatDuration } from './rcp.js';
+import { ADRENALINE_DUE_MS, ADRENALINE_LATE_MS, CYCLE_MS, formatDuration } from './temps.js';
 
 export const RYTHMES = {
   CHOQUABLE: 'choquable',
